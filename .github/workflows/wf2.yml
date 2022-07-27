@@ -1,0 +1,9 @@
+on:
+- push
+
+jobs:
+  test1:
+    runs-on: ubuntu
+    steps:
+    - shell: pwsh
+      run: Write-Host -Object hi
