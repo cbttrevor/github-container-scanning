@@ -14,4 +14,4 @@ jobs:
         sudo apt-get update
         sudo apt-get install trivy --yes
     - run: trivy image ubuntu:focal
-    - run: trivy image ubuntu:jammy
+    - run: trivy image ubuntu:jammy-20211029
