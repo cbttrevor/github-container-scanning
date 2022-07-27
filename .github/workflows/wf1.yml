@@ -3,7 +3,7 @@ on:
 
 jobs:
   trivy:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.4.2
 
