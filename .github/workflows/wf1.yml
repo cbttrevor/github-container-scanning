@@ -19,7 +19,7 @@ jobs:
     - uses: actions/cache@v3.0.5
       name: Cache Trivy DB
       with:
-        path: ${{ env.CACHE_DIR }}/trivy
+        path: ${{ env.CACHE_DIR }}
         key: trivy-db
     - run: trivy image python --download-db-only --cache-dir ${{ env.CACHE_DIR }}
     - run: trivy image ubuntu:focal-20200703
