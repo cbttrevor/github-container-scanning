@@ -17,7 +17,7 @@ jobs:
     - uses: actions/cache@v3.0.5
       name: Cache Trivy DB
       with:
-        path: $HOME/.cache/trivy
+        path: ${{ env.HOME }}/.cache/trivy
         key: trivy-db
     - run: trivy image ubuntu:focal-20200703
     - run: trivy image ubuntu:jammy-20211029
