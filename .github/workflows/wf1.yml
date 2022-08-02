@@ -16,12 +16,12 @@ jobs:
         echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
         sudo apt-get update
         sudo apt-get install trivy --yes
-    - run: trivy image python --download-db-only --cache-dir ${{ env.CACHE_DIR }}
     - uses: actions/cache@v3.0.5
       name: Cache Trivy DB
       with:
         path: ${{ env.CACHE_DIR }}/trivy
         key: trivy-db
+    - run: trivy image python --download-db-only --cache-dir ${{ env.CACHE_DIR }}
     - run: trivy image ubuntu:focal-20200703
     - run: trivy image ubuntu:jammy-20211029
     - run: trivy image ubuntu:bionic-20171114
